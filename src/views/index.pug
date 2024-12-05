@@ -1,0 +1,10 @@
+doctype html 
+html
+    head 
+        title Essais Formulaire
+    body 
+        if message 
+            div= message 
+        form(action="/submit" method="post" name="test") 
+            input(type="text" name="champText")
+            input(type="submit" value="Valider")
