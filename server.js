@@ -22,7 +22,7 @@ app.get("/", (req,res) => {
 })
 
 app.post("/submit", indexController.showInput);
-
+// app.get ('/', indexController.getInput )
 //Utilisation du routeur
 app.use(router);
 

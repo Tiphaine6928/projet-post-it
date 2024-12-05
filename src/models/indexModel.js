@@ -1,12 +1,10 @@
-import indexController from "../controllers/indexController";
+let array = []
 
 export default {
-    // dataUsed: (data) => {
-    //     return `vous avez soumis : ${data}`
-    // },
-
     dataUsed(data){
         console.log('dataModel', data);
-        return `vous avez soumis : ${data}`
+        array.push(data)
+        console.log("array : ", array)
+        return array
     }
 }
