@@ -14,7 +14,8 @@ body {
     --bs-link-hover-color : #fd0707
 }
 
-.container.layoutcontain {
+.layoutcontain {
+    padding: 0 ;
     flex-grow: 1;
     height: 100vh;
     width: 70%;
@@ -26,6 +27,25 @@ body {
 }
 
 /* --bs-link-color est une variable personnalisée (pas une propriété) déjà définie dans une classe bootstrap
-Il faut lui attribuer une couleur HEX
+Il faut lui attribuer une couleur HEX*/
 
-!important permet d'override les règles CSS djà chargées sur le CDN de Bootstrap*/
+.home {
+
+}
+
+
+#form {
+    display : flex;
+    flex-direction : column;
+    flex-grow : 1;
+}
+
+#form input {
+    margin : 20px;
+    width : 40vh;
+}
+
+#valider {
+    width : 20vh !important
+}
+/*!important permet d'override les règles CSS djà chargées sur le CDN de Bootstrap*/
