@@ -40,6 +40,10 @@ app.get("/calendrier", (req,res) => {
     res.render("calendrier");
 })
 
+app.get("/photoSubmit", (req,res) => {
+    res.render("photoSubmit");
+})
+
 
 app.get("/inscription", (req,res) => {
     res.render("inscription");
