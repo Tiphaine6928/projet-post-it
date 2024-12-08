@@ -59,6 +59,11 @@ app.get("/profil", (req,res) => {
 
 
 
+app.get("/post", (req,res) => {
+    res.render("post");
+})
+
+
 
 app.post("/submit", indexController.showInput);
 // app.get ('/', indexController.getInput )
