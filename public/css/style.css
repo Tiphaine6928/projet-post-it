@@ -27,6 +27,10 @@ ul.nav {
     margin: 0 auto;
 }
 
+.container-fluid {
+    font-size: 1.4rem;
+}
+
 .layoutcontain {
     /* border: 5px, solid, purple; */
     flex-grow: 1;
