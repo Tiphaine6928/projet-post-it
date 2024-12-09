@@ -5,6 +5,7 @@ import router from "./src/route/route.js";
 import path from 'path'
 import { fileURLToPath } from 'url'
 import indexController from './src/controllers/indexController.js';
+import db from './db.js';
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
