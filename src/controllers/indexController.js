@@ -17,10 +17,11 @@ export default{
         res.render("index", {message : action});
     
     }
-
     // getInput: (req, res) => {
     //     const data = indexModel.dataUsed("formData");
     // },
 
 
 }
+
+
