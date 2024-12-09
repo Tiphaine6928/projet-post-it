@@ -5,6 +5,7 @@ import router from "./src/route/route.js";
 import path from 'path'
 import { fileURLToPath } from 'url'
 import indexController from './src/controllers/indexController.js';
+import userController from './src/controllers/userController.js';
 import db from './db.js';
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
@@ -66,7 +67,8 @@ app.get("/post", (req,res) => {
 
 
 
-app.post("/submit", indexController.showInput);
+app.post("/givePseudo", userController.insSubmit);
+
 // app.get ('/', indexController.getInput )
 //Utilisation du routeur
 app.use(router);
