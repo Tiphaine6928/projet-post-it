@@ -9,16 +9,16 @@ head
     script(src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.js')
 
 body.bg-image
-    nav.navbar.justify-content-center.bg-light
+    nav.navbar.bg-light.custom-navbar
         .container-fluid
-            ul.nav.d-flex.justify-content-evenly.align-items-center.w100
+            ul.nav.d-flex.justify-content-center.align-items-center
                 li.nav.item 
-                    a.nav-link(href="./themes") Themes
+                    a.nav-link(href="./themes") Thèmes
                 li.nav.item
                     a.nav-link(href="./calendrier") Calendrier
                 li.nav.item
                     a.navbar-brand(href="/")
-                        img(src="/logo2.png" alt="logo" width="50" height="50" class="mx-auto")
+                        img(src="/logo2.png" alt="logo" width="80" height="80" class="mx-auto")
                 li.nav.item 
                     a.nav-link(href="./postSubmit") Soumettre une photo 
                     //- a.nav-link(href="#") Soumettre une photo 
@@ -33,21 +33,24 @@ body.bg-image
         div.bg-dark.justify-content-center.h-100
             block content
             block post
+            
     footer 
-        nav.navbar.justify-content-center
-            .container-fluid
-            ul.nav.d-flex.justify-content-evenly.align-items-center.w100
-                li.nav.item 
-                    a.nav-link(href="#") Règles d'utilisation
-                li.nav.item
-                    a.nav-link(href=".#") Politique de conservation des données personnelles
-                li.nav.item 
-                    a.nav-link(href="#") Crédits
-                li.nav.item 
-                    a.nav-link(href="#") FAQ
-                li.nav.item 
-                    a.nav-link(href="#") Nous rejoindre 
-                li.nav.item 
-                    a.nav-link(href="#") Mentions légales 
-                li.nav.item 
-                    a.nav-link(href="#") Plan du site
+        .container-fluid.bg-light.text-dark.py-4 
+            .row.justify-content-center 
+                .col-12 
+                    ul.nav.justify-content-center 
+                        li.nav-item 
+                            a.nav-link(href="#") Règles d'utilisation 
+                        li.nav-item 
+                            a.nav-link(href="#") Politique de conservation des données personnelles 
+                        li.nav-item 
+                            a.nav-link(href="#") Crédits 
+                        li.nav-item 
+                            a.nav-link(href="#") FAQ 
+                        li.nav-item 
+                            a.nav-link(href="#") Nous rejoindre
+                        li.nav-item 
+                            a.nav-link(href="#") Mentions légales 
+                        li.nav-item 
+                            a.nav-link(href="#") Plan du site
+

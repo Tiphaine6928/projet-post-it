@@ -9,9 +9,26 @@ body {
     background-size: cover;
 }
 
+.custom-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .nav {
     --bs-link-color: #ff5733;
-    --bs-link-hover-color : #fd0707
+    --bs-link-hover-color : #fd0707;
+    width: auto;
+}
+
+ul.nav {
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    font-size: 1.4rem;
 }
 
 .layoutcontain {
@@ -98,7 +115,7 @@ Il faut lui attribuer une couleur HEX*/
 }
 
 #bioContainer {
-    padding: 10px 0 0px 10px;
+    padding: 10px 0 0 10px;
     display: grid;
     grid-column-start: 3;
     grid-column-end: 5;
@@ -116,7 +133,7 @@ Il faut lui attribuer une couleur HEX*/
 }
 
 .onePost {
-    margin: 10px 0 0px 10px;
+    margin: 10px 0 0 10px;
     display: grid;
     grid-column-start: 1;
     grid-column-end: 2;
