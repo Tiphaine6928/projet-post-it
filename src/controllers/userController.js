@@ -1,8 +1,8 @@
-import userModel from "../models/userModel.js";
 
 
 
-export default{
+
+module.exports = {
 
     insSubmit: (req, res) => {
         //Récupération des données du formulaire

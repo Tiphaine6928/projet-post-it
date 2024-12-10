@@ -1,4 +1,5 @@
 doctype html
+-var connected = false
 head 
     meta(charset='utf-8')
     title Post It! 
@@ -22,12 +23,19 @@ body.bg-image
                 li.nav.item 
                     a.nav-link(href="./postSubmit") Soumettre une photo 
                     //- a.nav-link(href="#") Soumettre une photo 
-                li.nav.item 
-                    a.nav-link(href="./profil") Profil
+                        //- a.nav-link(href="#") Soumettre une photo
+                if connected==true  
+                    li.nav.item 
+                        a.nav-link(href="./profil") Profil
                         //- Utiliser une variable pour créer un changement de lien selon la condition connecté ou pas
 
                         //- routes Express => routes serveur. Requête GET
                         //-routes Pug => routes de navigation, elles pointent vers les URL définies par les routes serveur
+                else 
+                    li.nav.item
+                        a.nav-link(href="./inscription") Inscription 
+                    li.nav.item     
+                        a.nav-link(href="./connexion") Connexion
 
     .container.layoutcontain
         div.bg-dark.justify-content-center.h-100

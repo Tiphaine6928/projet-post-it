@@ -1,15 +1,13 @@
-//Import le paquet express
-import express from 'express';
-//import le router
-import router from "./src/route/route.js";
-import path from 'path'
-import { fileURLToPath } from 'url'
-import indexController from './src/controllers/indexController.js';
-import userController from './src/controllers/userController.js';
-import db from './db.js';
+// Importer le paquet express
+const express = require('express');
+// Importer le router
+const path = require('path');
+const { fileURLToPath } = require('url');
+const userController = require('./src/controllers/userController.js');
+const db = require('./db.js');
 
-const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
-const __dirname = path.dirname(__filename); // get the name of the directory
+// const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+// const __dirname = path.dirname(__filename); // get the name of the directory
 
 
 //Création d'une application express 
@@ -70,8 +68,7 @@ app.get("/post", (req,res) => {
 app.post("/givePseudo", userController.insSubmit);
 
 // app.get ('/', indexController.getInput )
-//Utilisation du routeur
-app.use(router);
+
 
 //Activation du serveur sur le port défini en amont 
 app.listen(port, () => {
