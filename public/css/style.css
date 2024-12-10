@@ -50,12 +50,15 @@ h1 {
     margin-top: 5px;
 }
 
+.accueil {
+    text-align: center;
+}
 /* --bs-link-color est une variable personnalisée (pas une propriété) déjà définie dans une classe bootstrap
 Il faut lui attribuer une couleur HEX*/
 
-.home {
+/*.home {
 
-}
+}*/
 
 
 #form {
@@ -89,7 +92,7 @@ Il faut lui attribuer une couleur HEX*/
     display : grid;
     color : rgb(255, 255, 255);
     padding-top : 50px;
-    height : 200px
+    height : 200px;
 }
 
 #profilInfos {
@@ -97,7 +100,7 @@ Il faut lui attribuer une couleur HEX*/
     grid-template-columns: repeat(4, 1fr);
     background-color: green;
     padding : 5px;
-
+    border-radius: 8px;
 }
 
 #userContainer {
@@ -122,7 +125,7 @@ Il faut lui attribuer une couleur HEX*/
     grid-column-end: 1;
     background-color :aqua;
     margin-right: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 #bioContainer {
@@ -131,7 +134,7 @@ Il faut lui attribuer une couleur HEX*/
     grid-column-start: 3;
     grid-column-end: 5;
     background-color: #7a33ff;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .posts {
@@ -139,9 +142,10 @@ Il faut lui attribuer une couleur HEX*/
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 
-    background-color: yellow;
+    background-color: gray;
     height : 50vh;
     margin : 10px;
+    border-radius: 8px;
 }
 
 .onePost {
@@ -152,5 +156,5 @@ Il faut lui attribuer une couleur HEX*/
     grid-row-start: 1;
     grid-row-end: 2;
     background-color: #ff33dd;
-    border-radius: 10px;
+    border-radius: 8px;
 }
