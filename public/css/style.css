@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 .nav {
     --bs-link-color: #ff5733;
@@ -29,6 +30,7 @@ ul.nav {
 
 .container-fluid {
     font-size: 1.4rem;
+    margin-top: 10px;
 }
 
 .layoutcontain {
@@ -41,6 +43,11 @@ ul.nav {
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /* font-size: pas trop gros */
+}
+
+h1 {
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 /* --bs-link-color est une variable personnalisée (pas une propriété) déjà définie dans une classe bootstrap
@@ -109,9 +116,13 @@ Il faut lui attribuer une couleur HEX*/
 
 #iconContainer {
     display: grid;
-    grid-row-start: 3;
+    grid-row-start: 2;
     grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 1;
     background-color :aqua;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
 #bioContainer {
@@ -120,12 +131,13 @@ Il faut lui attribuer une couleur HEX*/
     grid-column-start: 3;
     grid-column-end: 5;
     background-color: #7a33ff;
+    border-radius: 10px;
 }
 
 .posts {
     display : grid;
-    grid-template-columns : repeat(4, 1fr);
-    grid-template-rows : repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 
     background-color: yellow;
     height : 50vh;
@@ -136,8 +148,9 @@ Il faut lui attribuer une couleur HEX*/
     margin: 10px 0 0 10px;
     display: grid;
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     background-color: #ff33dd;
+    border-radius: 10px;
 }
