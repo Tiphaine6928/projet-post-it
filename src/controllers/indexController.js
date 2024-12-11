@@ -1,7 +1,3 @@
-import indexModel from "../models/indexModel.js";
-
-
-
 export default{
    
     showInput: (req, res) => {
