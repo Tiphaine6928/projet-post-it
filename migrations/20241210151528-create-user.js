@@ -15,12 +15,6 @@ module.exports = {
       mdp: {
         type: Sequelize.STRING
       },
-      icone: {
-        type: Sequelize.STRING
-      },
-      biography: {
-        type: Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

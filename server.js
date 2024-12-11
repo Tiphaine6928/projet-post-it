@@ -66,7 +66,7 @@ app.get("/posts", getPost)
 
 
 
-app.post("/givePseudo", userController.insSubmit);
+app.post("/sInscrire", createUser);
 
 // app.get ('/', indexController.getInput )
 
