@@ -1,5 +1,6 @@
 doctype html
 -var connected = false
+-var admin = true 
 head 
     meta(charset='utf-8')
     title Post It! 
@@ -31,6 +32,9 @@ body.bg-image
 
                         //- routes Express => routes serveur. Requête GET
                         //-routes Pug => routes de navigation, elles pointent vers les URL définies par les routes serveur
+                if admin==true
+                    li.nav.item
+                        a.nav-link(href="./adminTheme") Admin
                 else 
                     li.nav.item
                         a.nav-link(href="./inscription") Inscription 
