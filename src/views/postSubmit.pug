@@ -2,12 +2,29 @@ extends layout
 block content 
     h1 Participe au thème du jour! 
     h2 Le thème du jour est : soleil 
-    p Télécharge ta photo en respectant les règles du site. Toute photo ne respectant pas les règles sera suppriméé. 
+    p Télécharge ta photo en respectant les règles du site. Toute photo ne respectant pas les règles sera supprimée. 
     p N'oublie pas : prendune photo de bonne qualité et sois créatif! Plus ta photo respectera ces critères, plus grandes seront ets chances de gagner le thème du jour ;)
     p Et si tu manques d'inspiration, va jeter un oeil aux création des autres sur le feed
 
-
+    a(href="")
     button.btn.btn-outline-danger Envoie ta photo
+
+        h1 Create a New Post
+        form(action="/postSubmit" method="POST")
+        div
+            label(for="name") Name:
+            input(type="text" name="name" id="name" required)
+        div
+            label(for="image") Image URL:
+            input(type="url" name="image" id="image" required)
+        div
+            label(for="legend") Legend:
+            input(type="text" name="legend" id="legend")
+        div
+            label(for="likes") Likes:
+            input(type="number" name="likes" id="likes" min="0")
+        div
+            button(type="submit") Submit
 
 
 
