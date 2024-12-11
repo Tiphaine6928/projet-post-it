@@ -9,6 +9,10 @@ const db = require('./db.js');
 
 // const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 // const __dirname = path.dirname(__filename); // get the name of the directory
+const {
+    getPost,
+    createPost,
+} = require('./src/controllers/postSubmitController.js');
 
 
 //Création d'une application express 
@@ -16,6 +20,7 @@ const app = express();
 app.use(express.urlencoded({extended : true}));
 // app.use('./views', express.static(__dirname + '../node_modules/bootstrap/dist'))
 app.use(express.static('public'))
+
 
 //renseignement du port du serveur . recherche de variable d'environement ou sinon aller sur le port 5000
 const port = process.env.PORT || 5000
@@ -51,9 +56,9 @@ app.get("/calendrier", (req,res) => {
     res.render("calendrier");
 })
 
-app.get("/postSubmit", (req,res) => {
-    res.render("postSubmit");
-})
+app.post("/postSubmit", (req, res) => {
+    res.render('postSubmit');
+});
 
 app.get("/inscription", (req,res) => {
     res.render("inscription");
@@ -67,9 +72,7 @@ app.get("/profil", (req,res) => {
     res.render("profil");
 })
 
-app.get("/post", (req,res) => {
-    res.render("post");
-})
+app.get("/posts", getPost)
 
 app.get("/adminTheme", (req,res) => {
     res.render("adminTheme");
