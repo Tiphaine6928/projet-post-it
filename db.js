@@ -20,4 +20,4 @@ const sequelize = new Sequelize('post-it', 'postgres', 'tiphaine', {
     }
 })();
 
-module.exports =  sequelize
+module.exports = sequelize

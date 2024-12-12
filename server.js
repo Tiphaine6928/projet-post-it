@@ -11,10 +11,11 @@ const db = require('./db.js');
 // const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 // const __dirname = path.dirname(__filename); // get the name of the directory
 const {
-    getPost,
-    createPost,
+    getPost
 } = require('./src/controllers/postSubmitController.js');
 
+const { createUser, connexion } = require('./src/controllers/userController.js');
+// const { connexion } = require('./src/controllers/userController.js');
 
 //Création d'une application express 
 const app = express();
@@ -71,7 +72,8 @@ app.get("/adminTheme", (req,res) => {
 
 
 
-app.post("/givePseudo", userController.insSubmit);
+app.post("/sInscrire", createUser);
+app.post("/seConnecter", connexion);
 
 app.post("/add_post", createPost);
 
