@@ -13,6 +13,12 @@ const connexion = async (req, res) => {
         let checkUser = await User.findAll({ 
             where: { pseudo : pseudoCheck, mdp : passwordCheck } 
         });
+//     insSubmit: (req, res) => {
+//         //Récupération des données du formulaire
+//         const pseudoData = req.body.pseudo; //Récupérationn des donnée du formulaire dans l'input champText
+
+//         //Appel du modèle pour agir sur les données 
+//         const action = userModel.dataUsed(pseudoData);
 
         if (!pseudoCheck || !passwordCheck) {
             return res.render('connexion', { error: 'Veuillez remplir tous les champs.' });

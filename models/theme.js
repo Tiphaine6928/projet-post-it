@@ -1,8 +1,9 @@
 'use strict';
 const {
-  Model
+  Model,DataTypes
 } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+const sequelize = require( "../db");
+const { cloneDeep } = require('sequelize/lib/utils');
   class Theme extends Model {
     /**
      * Helper method for defining associations.
@@ -12,13 +13,26 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
+
+    static async findTheme() {
+      const todayIndex = Theme.getDayIndex(); //Calcul de l'indice du jour pour le faire matcher avec le day_index de la BDD
+      const todayTheme = await Theme.findOne({where: {id: todayIndex}});
+      return todayTheme;
+    }
+    
+
   }
-  Theme.init({
-    id: DataTypes.INTEGER,
-    name: DataTypes.STRING
-  }, {
+  Theme.init(
+    {
+    id: {type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement : true,
+    },
+    name: DataTypes.STRING},
+    {
     sequelize,
     modelName: 'Theme',
   });
-  return Theme;
-};
+
+module.exports =Theme
+

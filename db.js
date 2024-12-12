@@ -15,8 +15,7 @@ const sequelize = new Sequelize('post_it', 'postgres', 'postgres', {
     try {
         await sequelize.authenticate();
         console.log('Connection has been established successfully');
-        await sequelize.sync({ force: true });
-console.log('All models were synchronized successfully.');
+        await sequelize.sync();
     } catch (error) {
         console.error('Unable to connect to the database', error);
     }

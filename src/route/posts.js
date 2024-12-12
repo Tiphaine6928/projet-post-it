@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Post = require('../models/post');
 
 const {
     getPost,
@@ -11,3 +12,4 @@ router.get('/posts', getPost);
 router.post('/postSubmit', createPost);
 
 module.exports = router;
+
