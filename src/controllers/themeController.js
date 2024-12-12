@@ -12,6 +12,9 @@ function getDayIndex() {
   const startOfYear = new Date(today.getFullYear(), 0, 0);  // Crée une date pour le 1er janvier de cette année
   const diff = today - startOfYear;  // Calcule la différence en millisecondes
   const oneDay = 1000 * 60 * 60 * 24;  // Nombre de millisecondes dans une journée
+  console.log ("index")
+  console.log(Math.floor(diff / oneDay));
+  console.log("index");
   return Math.floor(diff / oneDay);  // Divise la différence par le nombre de millisecondes dans une journée pour obtenir le todayIndex une valeur comprise entre 0 et 365
 }
 
@@ -38,6 +41,9 @@ module.exports = {
             // Récupérer le thème du jour du modèle
             const todayTheme = await Theme.findByPk(getDayIndex()); // Modifier selon la logique de sélection du thème
             // Afficher la page avec le thème
+            console.log("Theme")
+            console.log(todayTheme);
+            console.log("Theme");
 
             res.render("accueil", { theme: todayTheme.dataValues.name});
         } catch (error) {
