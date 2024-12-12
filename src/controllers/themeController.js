@@ -50,5 +50,21 @@ module.exports = {
             console.log(error);
             res.status(500).send("Vérifie showTheme dans themeController");
         }
-    }
+    },
+
+    showThemeSubmit: async (req, res) => {
+      try {
+          // Récupérer le thème du jour du modèle
+          const todayTheme = await Theme.findByPk(getDayIndex()); // Modifier selon la logique de sélection du thème
+          // Afficher la page avec le thème
+          console.log("Theme")
+          console.log(todayTheme);
+          console.log("Theme");
+
+          res.render("postSubmit", { theme: todayTheme.dataValues.name});
+      } catch (error) {
+          console.log(error);
+          res.status(500).send("Vérifie showThemeSubmit dans themeController");
+      }
+  }
 };
