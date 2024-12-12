@@ -5,7 +5,7 @@ const { Sequelize } = require('sequelize');
 // pg-hstore (module qui gère les données JSON pour postgresql)
 
 // (database, username, password)
-const sequelize = new Sequelize('post-it', 'postgres', 'tiphaine', {
+const sequelize = new Sequelize('post_it', 'postgres', 'postgres', {
     host: 'localhost',
     dialect: 'postgres'
 });
