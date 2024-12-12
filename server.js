@@ -5,6 +5,7 @@ const path = require('path');
 const { fileURLToPath } = require('url');
 const userController = require('./src/controllers/userController.js');
 const themeController = require('./src/controllers/themeController.js')
+const postSubmitController = require('./src/controllers/postSubmitController.js');
 const Theme = require('./models/theme.js')
 const db = require('./db.js');
 
@@ -38,7 +39,7 @@ app.set("views", path.join(__dirname, "./src/views"));
 //Route racine c'est là que tout commence 
 app.get("/", themeController.showTheme)
     
-app.post("/givePseudo", userController.insSubmit);
+// app.post("/givePseudo", userController.insSubmit);
 
 app.get("/themes", (req,res) => {
     res.render("themes");
@@ -75,7 +76,7 @@ app.get("/adminTheme", (req,res) => {
 app.post("/sInscrire", createUser);
 app.post("/seConnecter", connexion);
 
-app.post("/add_post", createPost);
+app.post("/add_post", postSubmitController.createPost);
 
 //Activation du serveur sur le port défini en amont 
 app.listen(port, () => {
