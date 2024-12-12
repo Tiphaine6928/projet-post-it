@@ -28,6 +28,8 @@ const port = process.env.PORT || 5000
 
 
 
+
+
 //permet d'initialiser la vue sur pug 
 app.set("view engine","pug");
 app.set("views", path.join(__dirname, "./src/views"));
@@ -45,8 +47,8 @@ app.get("/calendrier", (req,res) => {
     res.render("calendrier");
 })
 
-app.post("/postSubmit", (req, res) => {
-    res.render('postSubmit');
+app.get("/postSubmit", (req, res) => {
+    res.render("postSubmit");
 });
 
 app.get("/inscription", (req,res) => {
@@ -70,9 +72,6 @@ app.get("/adminTheme", (req,res) => {
 
 
 app.post("/givePseudo", userController.insSubmit);
-app.post("/addTheme", themeController.addTheme);
-
-
 
 
 

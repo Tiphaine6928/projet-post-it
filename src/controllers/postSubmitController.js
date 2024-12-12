@@ -14,6 +14,7 @@ const getPost = async (req,res) => {
 
 const createPost = async (req,res) => {
     try {
+        console.log('hello');
         const { name, image, legend, likes } = req.body; // Données reçues depuis le front
         const newPost = await Post.create({
             name,     // Il y a pas l'id, c'est normal il est auto-incrémenté par sequelize
