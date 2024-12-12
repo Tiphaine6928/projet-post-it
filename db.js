@@ -21,4 +21,4 @@ const sequelize = new Sequelize('post_it', 'postgres', 'postgres', {
     }
 })();
 
-module.exports =  sequelize
+module.exports = sequelize
