@@ -4,8 +4,8 @@ extends layout
 block content 
     div
         .container  
-            if username
-                div Bonjour #{username}
+            if connectedUser
+                div Bonjour #{connectedUser}
             else 
                 div Pour voir le thème du jour, connectez-vous.
             div.accueil

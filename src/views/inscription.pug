@@ -1,8 +1,8 @@
 extends layout
 block content 
     .container
-            if pseudo 
-                div Bonjour #{pseudo}
+            if connectedUser
+                div Bonjour #{connectedUser}
             else 
                 div Pour vous inscrire, choisissez un nom d'utilisateur et un mot de passe
             form#form(action="/sInscrire" method="post" name="pseudo") 

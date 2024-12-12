@@ -9,6 +9,6 @@ const {
 // router.get('/posts', connectUser);
 
 router.post('/sInscrire', createUser);
-router.post('seConnecter', connexion);
+router.post('/seConnecter', connexion);
 
 module.exports = router;

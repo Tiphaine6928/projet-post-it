@@ -6,29 +6,31 @@ const User = require('../../models/user');
 
 
 const connexion = async (req, res) => {
-    // try {
-        const { pseudoco, passwordco } = req.body;
-        username = pseudoco
-        // const pseudoco = req.body.name
+    try {
+        const pseudoCheck = req.body.pseudoForm
+        const passwordCheck = req.body.passwordForm
 
-        let checkUser = await User.findAll({ where: { pseudo : pseudoco, mdp : passwordco } });
+        let checkUser = await User.findAll({ 
+            where: { pseudo : pseudoCheck, mdp : passwordCheck } 
+        });
+
+        if (!pseudoCheck || !passwordCheck) {
+            return res.render('connexion', { error: 'Veuillez remplir tous les champs.' });
+        }
+        
 
         if (checkUser) {
-            console.log("connexion faite,", pseudoco)
-            res.render('accueil', {connected: true, pseudo: pseudoco})
+            console.log("connexion faite,", pseudoCheck)
+            res.render('accueil', {connected: true, connectedUser: pseudoCheck})
         } else {
-            console.log("connexion échouée, ")
+            console.log("connexion échouée")
             res.render('connexion', {error : 'Pseudo ou Mdp invalide'});
         }
+    } catch (error) {
+        console.error('Erreur lors de la connexion : ', error);
+        res.status(500).send("erreur connexion");
+    }
 
-//     // } catch (error) {
-//     //     // const { pseudoco, passwordco } = req.body.name;
-//     //     // console.error("pseudo donné par le user : ", pseudoco);
-//     //     // console.error("pseudo inscrit dans la BDD : ", pseudo);
-//     //     // console.error("mdp donné par le user : ", passwordco);
-//     //     // console.error("mdp inscrit dans la BDD : ", mdp);
-//     //     res.status(500).json({ message : 'Erreur serveur'});
-//     // }
 }
 
 const createUser = async (req, res) => {
