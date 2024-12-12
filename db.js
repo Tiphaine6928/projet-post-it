@@ -5,7 +5,7 @@ const { Sequelize } = require('sequelize');
 // pg-hstore (module qui gère les données JSON pour postgresql)
 
 // (database, username, password)
-const sequelize = new Sequelize('post_it', 'postgres', 'postgres', {
+const sequelize = new Sequelize('post-it', 'postgres', 'tiphaine', {
     host: 'localhost',
     dialect: 'postgres'
 });
@@ -15,7 +15,6 @@ const sequelize = new Sequelize('post_it', 'postgres', 'postgres', {
     try {
         await sequelize.authenticate();
         console.log('Connection has been established successfully');
-        await sequelize.sync({ force: true });
     } catch (error) {
         console.error('Unable to connect to the database', error);
     }

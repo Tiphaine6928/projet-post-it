@@ -73,7 +73,7 @@ app.get("/adminTheme", (req,res) => {
 
 app.post("/givePseudo", userController.insSubmit);
 
-
+app.post("/add_post", createPost);
 
 //Activation du serveur sur le port défini en amont 
 app.listen(port, () => {
