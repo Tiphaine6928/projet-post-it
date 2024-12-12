@@ -1,8 +1,13 @@
 //- route : "/"
+
 extends layout
 block content 
     div
         .container  
+            if username
+                div Bonjour #{username}
+            else 
+                div Pour voir le thème du jour, connectez-vous.
             div.accueil
                 h3 Bienvenue sur Post-It!, le premier site de challenge photo quotidien!
                 p Le principe est simple : 1 jour, 1 thème, plusieurs centaines de photos postées par nos utilisateurs!

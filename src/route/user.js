@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 const {
-    // connectUser,
+    connexion,
     createUser
-} = require('../src/controllers/userController.js');
+} = require('../controllers/userController.js');
 
-router.get('/posts', connectUser);
+// router.get('/posts', connectUser);
 
 router.post('/sInscrire', createUser);
+router.post('seConnecter', connexion);
 
 module.exports = router;

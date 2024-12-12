@@ -3,16 +3,17 @@ const express = require('express');
 // Importer le router
 const path = require('path');
 const { fileURLToPath } = require('url');
-const userController = require('./src/controllers/userController.js');
+// const userController = require('./src/controllers/userController.js');
 const db = require('./db.js');
 
 // const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 // const __dirname = path.dirname(__filename); // get the name of the directory
 const {
-    getPost,
-    createPost,
+    getPost
 } = require('./src/controllers/postSubmitController.js');
 
+const { createUser, connexion } = require('./src/controllers/userController.js');
+// const { connexion } = require('./src/controllers/userController.js');
 
 //Création d'une application express 
 const app = express();
@@ -67,6 +68,7 @@ app.get("/posts", getPost)
 
 
 app.post("/sInscrire", createUser);
+app.post("/seConnecter", connexion);
 
 // app.get ('/', indexController.getInput )
 

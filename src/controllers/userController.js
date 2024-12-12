@@ -2,34 +2,59 @@
 
 const User = require('../../models/user');
 
-// const connectUser = async (req, res) => {
-//     try {
-//         const posts = await User.findAll();
-//         res.status(200).json(user);
-//     } catch (error) {
-//         console.error('Erreur lors de la récupération des infos user : ', error);
-//         res.status(500).json({ message : 'Erreur serveur'});
-//     }
-// }
+// const connected = require('layout')
 
-createUser = async (req, res) => {
+
+const connexion = async (req, res) => {
+    // try {
+        const { pseudoco, passwordco } = req.body;
+        username = pseudoco
+        // const pseudoco = req.body.name
+
+        let checkUser = await User.findAll({ where: { pseudo : pseudoco, mdp : passwordco } });
+
+        if (checkUser) {
+            console.log("connexion faite,", pseudoco)
+            res.render('accueil', {connected: true, pseudo: pseudoco})
+        } else {
+            console.log("connexion échouée, ")
+            res.render('connexion', {error : 'Pseudo ou Mdp invalide'});
+        }
+
+//     // } catch (error) {
+//     //     // const { pseudoco, passwordco } = req.body.name;
+//     //     // console.error("pseudo donné par le user : ", pseudoco);
+//     //     // console.error("pseudo inscrit dans la BDD : ", pseudo);
+//     //     // console.error("mdp donné par le user : ", passwordco);
+//     //     // console.error("mdp inscrit dans la BDD : ", mdp);
+//     //     res.status(500).json({ message : 'Erreur serveur'});
+//     // }
+}
+
+const createUser = async (req, res) => {
     try {
         const { pseudo, mdp } = req.body;
         const newUser = await User.create({
             pseudo,
             mdp
         });
-        res.status(201).json(newUser);
+        // res.status(201).json(newUser);
+        res.redirect('connexion')
+
     } catch (error) {
-        console.error("Erreur lors de la création du user : ", error);
-        res.status(500).send({ message : "Erreur serveur" });
+        console.error('Erreur lors de la création du user : ', error);
+        res.status(500).send(error);
     }
 }
 
 module.exports = {
-    // connectUser,
-    createUser
+    createUser,
+    connexion
 }
+
+
+
+
 
 
 

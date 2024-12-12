@@ -4,7 +4,7 @@ block content
             if pseudo 
                 div Bonjour #{pseudo}
             else 
-                div Entrez votre nom d'utilisateur et votre mot de passe
+                div Pour vous inscrire, choisissez un nom d'utilisateur et un mot de passe
             form#form(action="/sInscrire" method="post" name="pseudo") 
                 input(type="text" name="pseudo" placeholder="pseudo")
                 input(type="text" name="mdp" placeholder="mot de passe")

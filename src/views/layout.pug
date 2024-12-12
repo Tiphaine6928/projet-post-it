@@ -1,5 +1,6 @@
 doctype html
 -var connected = false
+//- -module.exports= connected
 head 
     meta(charset='utf-8')
     title Post It! 
@@ -10,7 +11,7 @@ head
     script(src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.js')
 
 body.bg-image
-    nav.navbar.bg-light.custom-navbar
+    nav.navbar.bg-dark.custom-navbar
         .container-fluid
             ul.nav.d-flex.justify-content-center.align-items-center
                 li.nav.item 
@@ -38,12 +39,12 @@ body.bg-image
                         a.nav-link(href="./connexion") Connexion
 
     .container.layoutcontain
-        div.bg-transparent.justify-content-center.h-100
+        div.bg-dark.justify-content-center.text-white.h-100
             block content
             block post
             
     footer 
-        .container-fluid.bg-light.text-dark.py-4 
+        .container-fluid.bg-transparent.text-dark.py-4 
             .row.justify-content-center 
                 .col-12 
                     ul.nav.justify-content-center 
