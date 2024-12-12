@@ -22,7 +22,6 @@ module.exports = {
     addTheme: async (req, res) => {
         try {
             const theme = req.body.theme;
-
             const existingTheme = await Theme.findOne({ where: { name: theme } });
             if (!existingTheme) {
                 await Theme.create({ name: theme });

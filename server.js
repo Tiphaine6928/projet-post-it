@@ -72,6 +72,7 @@ app.get("/adminTheme", (req,res) => {
 
 app.post("/sInscrire", createUser);
 app.post("/seConnecter", connexion);
+app.post("/addTheme", themeController.addTheme )
 
 app.post("/add_post", postSubmitController.createPost);
 
