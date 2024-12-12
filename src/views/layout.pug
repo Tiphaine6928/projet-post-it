@@ -1,5 +1,6 @@
 doctype html
--var connected = false
+-var connected = true
+-var admin = false
 head 
     meta(charset='utf-8')
     title Post It! 
@@ -36,6 +37,11 @@ body.bg-image
                         a.nav-link(href="./inscription") Inscription 
                     li.nav.item     
                         a.nav-link(href="./connexion") Connexion
+
+                if admin==true
+                    li.nav.item
+                        a.nav-link(href="./adminTheme") Admin
+              
 
     .container.layoutcontain
         div.bg-transparent.justify-content-center.h-100

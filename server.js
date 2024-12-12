@@ -4,6 +4,8 @@ const express = require('express');
 const path = require('path');
 const { fileURLToPath } = require('url');
 const userController = require('./src/controllers/userController.js');
+const themeController = require('./src/controllers/themeController.js')
+const Theme = require('./models/theme.js')
 const db = require('./db.js');
 
 // const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
@@ -26,16 +28,14 @@ const port = process.env.PORT || 5000
 
 
 
-
-
 //permet d'initialiser la vue sur pug 
 app.set("view engine","pug");
 app.set("views", path.join(__dirname, "./src/views"));
 
 //Route racine c'est là que tout commence 
-app.get("/", (req,res) => {
-    res.render("accueil");
-})
+app.get("/", themeController.showTheme)
+    
+app.post("/givePseudo", userController.insSubmit);
 
 app.get("/themes", (req,res) => {
     res.render("themes");
@@ -61,14 +61,19 @@ app.get("/profil", (req,res) => {
     res.render("profil");
 })
 
-
 app.get("/posts", getPost)
+
+app.get("/adminTheme", (req,res) => {
+    res.render("adminTheme");
+})
 
 
 
 app.post("/givePseudo", userController.insSubmit);
+app.post("/addTheme", themeController.addTheme);
 
-// app.get ('/', indexController.getInput )
+
+
 
 
 //Activation du serveur sur le port défini en amont 
