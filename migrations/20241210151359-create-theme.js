@@ -22,7 +22,7 @@ module.exports = {
       }
     });
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Themes');
-  }
+  // async down(queryInterface, Sequelize) {
+  //   await queryInterface.dropTable('Themes');
+  // }
 };
